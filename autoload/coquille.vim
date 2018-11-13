@@ -84,6 +84,7 @@ endfunction
 
 function! coquille#LibyMapping()
     map <buffer> <silent> <C-A-Up>      :CoqUndo<CR>
+endfunction
 
 function! coquille#Launch(...)
     if s:coq_running == 1

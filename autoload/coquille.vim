@@ -82,6 +82,9 @@ function! coquille#CoqideMapping()
     imap <buffer> <silent> <C-A-Right> <C-\><C-o>:CoqToCursor<CR>
 endfunction
 
+function! coquille#LibyMapping()
+    map <buffer> <silent> <C-A-Up>      :CoqUndo<CR>
+
 function! coquille#Launch(...)
     if s:coq_running == 1
         echo "Coq is already running"

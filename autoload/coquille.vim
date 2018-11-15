@@ -83,11 +83,15 @@ function! coquille#CoqideMapping()
 endfunction
 
 function! coquille#LibyMapping()
-    map <buffer> <silent> <C-c>u          :CoqUndo<CR>
-    map <buffer> <silent> <C-c>c          :CoqToCursor<CR>
-    map <buffer> <silent> <C-c>n          :CoqNext<CR>
+    map <buffer> <silent> <C-l>   :CoqLaunch<CR>
+    map <buffer> <silent> <C-u>   :CoqUndo<CR>
+    map <buffer> <silent> <C-c>   :CoqToCursor<CR>
+    map <buffer> <silent> <C-n>   :CoqNext<CR>
+    map <buffer> <silent> <C-k>   :CoqKill<CR>
 
+    imap <buffer> <silent> <C-u>  <C-\><C-o>:CoqUndo<CR>
     imap <buffer> <silent> <C-c>  <C-\><C-o>:CoqToCursor<CR>
+    imap <buffer> <silent> <C-n>  <C-\><C-o>:CoqNext<CR>
 endfunction
 
 function! coquille#Launch(...)

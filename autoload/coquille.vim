@@ -2,7 +2,7 @@ let s:coq_running=0
 let s:current_dir=expand("<sfile>:p:h") 
 
 if !exists('coquille_auto_move')
-    let g:coquille_auto_move="false"
+    let g:coquille_auto_move="true"
 endif
 
 try
@@ -83,9 +83,11 @@ function! coquille#CoqideMapping()
 endfunction
 
 function! coquille#LibyMapping()
-    map <buffer> <silent> .u          :CoqUndo<CR>
-    map <buffer> <silent> .c          :CoqToCursor<CR>
-    map <buffer> <silent> .n          :CoqNext<CR>
+    map <buffer> <silent> <C-c>u          :CoqUndo<CR>
+    map <buffer> <silent> <C-c>c          :CoqToCursor<CR>
+    map <buffer> <silent> <C-c>n          :CoqNext<CR>
+
+    imap <buffer> <silent> <C-c>  <C-\><C-o>:CoqToCursor<CR>
 endfunction
 
 function! coquille#Launch(...)
